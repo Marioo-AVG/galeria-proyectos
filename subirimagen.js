@@ -107,6 +107,7 @@ document.getElementById("form-proyecto").addEventListener("submit", async (e) =>
             scratchUrl
         );
 
-        window.location.href = "galeria-proyectos1.html";
+        window.location.href = "galeria.html";
     }
+
 });
