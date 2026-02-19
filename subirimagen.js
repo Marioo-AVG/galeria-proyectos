@@ -57,7 +57,7 @@ async function guardarProyecto(nombre, apellidos, curso, proyecto, imagenUrl, sc
                 alumno: nombre + " " + apellidos,
                 curso: curso,
                 titulo: proyecto,
-                descripcion: descripcion,
+                descripcion: "",
                 imagen_url: imagenUrl,
                 scratch_url: scratchUrl
             }
