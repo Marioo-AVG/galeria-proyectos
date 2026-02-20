@@ -49,14 +49,14 @@ async function subirScratch(file) {
 
 
 // Guardar proyecto
-async function guardarProyecto(nombre, apellidos, curso, proyecto, descripcion, imagenUrl, scratchUrl) {
+async function guardarProyecto(nombre, apellidos, curso, titulo, imagenUrl, scratchUrl, descripcion) {
     const { error } = await db
         .from("proyectos")
         .insert([
             {
                 alumno: nombre + " " + apellidos,
                 curso: curso,
-                titulo: proyecto,
+                titulo: titulo,
                 descripcion: descripcion,
                 imagen_url: imagenUrl,
                 scratch_url: scratchUrl
@@ -98,15 +98,16 @@ document.getElementById("form-proyecto").addEventListener("submit", async (e) =>
 
     // GUARDAR EN LA TABLA
     if (imagenUrl) {
-        await guardarProyecto(
-            nombre,
-            apellidos,
-            curso,
-            descripcion,
-            proyecto,
-            imagenUrl,
-            scratchUrl
-        );
+       await guardarProyecto(
+    nombre,
+    apellidos,
+    curso,
+    proyecto,      // ← ESTE es el título
+    imagenUrl,
+    scratchUrl,
+    descripcion    // ← ESTA es la descripción
+);
+
 
         window.location.href = "galeria.html";
     }
